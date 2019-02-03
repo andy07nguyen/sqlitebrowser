@@ -25030,7 +25030,7 @@ QCPColorMapData &QCPColorMapData::operator=(const QCPColorMapData &other)
     if (!isEmpty())
     {
       memcpy(mData, other.mData, sizeof(mData[0])*keySize*valueSize);
-      if (mAlpha)
+      if (other.mAlpha && mAlpha)
         memcpy(mAlpha, other.mAlpha, sizeof(mAlpha[0])*keySize*valueSize);
     }
     mDataBounds = other.mDataBounds;
